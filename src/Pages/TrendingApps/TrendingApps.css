@@ -1,0 +1,139 @@
+.trending-apps-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.trending-apps-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.trending-apps-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.trending-apps-header p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 20px 0;
+}
+
+
+.app-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.app-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.app-card-placeholder {
+    background-color: #e0e0e0;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    min-height: 180px;
+    overflow: hidden;
+}
+
+.app-info {
+    text-align: left;
+}
+
+.app-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.app-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #888;
+}
+
+.downloads, .rating {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 5px;
+    font-size: 12px;
+    color: #888;
+}
+
+.rating .icon {
+    color: #ffc107;
+}
+
+.show-all-button-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+.show-all-button {
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.show-all-button:hover {
+    background-color: #7b24c2;
+}
+
+
+@media (max-width: 1024px) {
+    .apps-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .apps-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .apps-grid {
+        grid-template-columns: 1fr; 
+    }
+}
