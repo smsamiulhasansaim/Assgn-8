@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
@@ -46,8 +47,8 @@ function Navbar() {
         </li>
         <li className="nav-item">
           <Link 
-            to="/apps" 
-            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            to="/AllApp" 
+            className={`nav-link ${location.pathname === '/AllApp' ? 'active' : ''}`}
             onClick={closeMenu}
           >
             Apps
@@ -55,8 +56,8 @@ function Navbar() {
         </li>
         <li className="nav-item">
           <Link 
-            to="/installation" 
-            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            to="/Installation" 
+            className={`nav-link ${location.pathname === '/Installation' ? 'active' : ''}`}
             onClick={closeMenu}
           >
             Installation
