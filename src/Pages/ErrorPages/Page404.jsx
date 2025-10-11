@@ -1,11 +1,23 @@
 import React from 'react';
-
-const Page404 = () => {
+import './Page404.css';
+function Page404() {
   return (
-    <div>
-      <h1> Ki ree Vondo Samiul Vul Page Aso Kan ..Mon Dia Kaj Koro </h1>
+    <div className="error-container">
+      <div className="error-content">
+        <img src="/src/assets/error-404.png" alt="" />
+        <h1 className="error-title">Oops, page not found!</h1>
+        <p className="error-message">
+          The page you are looking for is not available.
+        </p>
+        <button 
+          className="go-back-button"
+          onClick={() => window.history.back()} 
+        >
+          Go Back!
+        </button>
+      </div>
     </div>
   );
-};
+}
 
 export default Page404;

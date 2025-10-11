@@ -8,11 +8,13 @@ import Page404 from "../Pages/ErrorPAges/Page404";
 
 
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
     Component:Roots,
-    errorElement: <Page404></Page404>,
+    errorElement: <Page404></Page404>, 
+
     children:[
       {
       index:true,
