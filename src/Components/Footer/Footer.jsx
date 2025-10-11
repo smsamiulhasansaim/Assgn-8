@@ -12,7 +12,7 @@ function Footer() {
         <div className="footer-section">
           <div className="footer-brand">
             <span className="footer-logo">
-              <img src="/src/assets/logo.png" alt="HERO.IO Logo" />
+              <img src="/images/logo.png" alt="HERO.IO Logo" />
             </span>
             HERO.IO
           </div>

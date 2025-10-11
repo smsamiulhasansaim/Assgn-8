@@ -46,7 +46,7 @@ function Hero() {
       </div>
       <section class="hero-image-section">
     <div class="mockup-container">
-        <img src="/src/assets/hero.png" alt="" class="mockup-image" />
+        <img src="/images/hero.png" alt="" class="mockup-image" />
     </div>
     </section>
       <section className="hero-stats-section">

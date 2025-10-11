@@ -18,14 +18,15 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
+      <Link to="/">
+       <div className="navbar-brand">
         <span className="logo-icon">
-          <img src="/src/assets/logo.png" alt="HERO.IO Logo" />
+          <img src="/images/logo.png" alt="HERO.IO Logo" />
         </span>
         HERO.IO
       </div>
-
-      <button 
+      </Link>
+      <button     
         className={`navbar-toggle ${isMenuOpen ? 'active' : ''}`}
         onClick={toggleMenu}
         aria-label="Toggle navigation menu"

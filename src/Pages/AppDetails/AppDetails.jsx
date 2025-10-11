@@ -23,7 +23,7 @@ const AppDetails = () => {
   useEffect(() => {
     const fetchAppData = async () => {
       try {
-        const response = await fetch('/Public/Data.json');
+        const response = await fetch('/Data.json');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
@@ -140,21 +140,21 @@ const AppDetails = () => {
           <div className="ratings-reviews-section">
             <div className="detail-item">
               <div className="detail-icon-placeholder">
-                <img src="/src/assets/icon-downloads.png" alt="Downloads" />
+                <img src="/images/icon-downloads.png" alt="Downloads" />
               </div>
               <p className="detail-value">{formatDownloads(appData.downloads)}</p>
               <p className="detail-label">Downloads</p>
             </div>
             <div className="detail-item">
               <div className="detail-icon-placeholder">
-                <img src="/src/assets/icon-ratings.png" alt="Ratings" />
+                <img src="/Public/images/icon-ratings.png" alt="Ratings" />
               </div>
               <p className="detail-value">{appData.ratingAvg}</p>
               <p className="detail-label">Average Ratings</p>
             </div>
             <div className="detail-item">
               <div className="detail-icon-placeholder">
-                <img src="/src/assets/icon-review.png" alt="Reviews" />
+                <img src="/Public/images/icon-review.png" alt="Reviews" />
               </div>
               <p className="detail-value">{formatReviews(appData.reviews)}</p>
               <p className="detail-label">Total Reviews</p>
