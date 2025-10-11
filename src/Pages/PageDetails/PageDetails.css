@@ -1,0 +1,310 @@
+.page-details-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.page-details-container {
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+  margin: 50px auto 30px auto;
+  width: 100%;
+}
+
+.main-app-image-wrapper {
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+.main-app-image-placeholder {
+  width: 150px; 
+  height: 150px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.main-app-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.app-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.developer-info {
+  font-size: 1em;
+  color: #666;
+  margin: 0 0 20px 0;
+}
+
+.developer-name {
+  color: #8a2be2;
+  font-weight: 500;
+}
+
+.ratings-reviews-section {
+  display: flex;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 80px;
+}
+
+.detail-icon-placeholder {
+  width: 24px;
+  height: 24px;
+  background-color: transparent; 
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-icon-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.detail-value {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.detail-label {
+  font-size: 0.8em;
+  color: #666;
+  margin: 0;
+}
+
+.install-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+  align-self: flex-start;
+}
+
+.install-button:hover {
+  background-color: #218838;
+}
+
+.line {
+  width: 1200px;
+  height: 2px;
+  background-color:#F0F0F0;
+  margin: 20px auto;
+}
+.line-pro {
+  width: 1000px;
+  height: 2px;
+  background-color: #F0F0F0;
+  margin: 20px auto;
+}
+
+.chart-section {
+  width: 100%;
+  margin-top: 30px;
+  max-width: 1200px;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  padding: 25px;
+  margin: 0 auto;
+}
+
+.chart-title {
+  margin-left: 15px;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.description-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.description-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 25px;
+  margin: 0 auto;
+}
+
+.description-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.description-content {
+  color: #333;
+}
+
+.description-paragraph {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.description-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.description-paragraph strong {
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .page-details-wrapper {
+    padding: 15px;
+  }
+  
+  .chart-container {
+    height: 350px;
+    padding: 20px;
+  }
+  
+  .description-container {
+    padding: 20px;
+  }
+  
+  .line {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-details-wrapper {
+    padding: 10px;
+  }
+  
+  .page-details-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .main-app-image-wrapper {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .ratings-reviews-section {
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .detail-item {
+    margin-right: 0;
+  }
+  
+  .install-button {
+    align-self: center;
+    min-width: 200px;
+  }
+  
+  .chart-container {
+    height: 300px;
+    padding: 15px;
+  }
+  
+  .description-container {
+    padding: 15px;
+  }
+  
+  .description-title {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.5em;
+  }
+  
+  .ratings-reviews-section {
+    gap: 10px;
+  }
+  
+  .detail-item {
+    min-width: 70px;
+  }
+  
+  .detail-value {
+    font-size: 1.2em;
+  }
+  
+  .install-button {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .chart-container {
+    height: 250px;
+    padding: 10px;
+  }
+  
+  .chart-title {
+    font-size: 1.3em;
+    margin-left: 10px;
+  }
+  
+  .description-container {
+    padding: 10px;
+  }
+  
+  .description-title {
+    font-size: 1.2em;
+  }
+  
+  .description-paragraph {
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+}
