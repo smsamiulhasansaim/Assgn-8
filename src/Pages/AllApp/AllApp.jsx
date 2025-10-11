@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './AllApp.css';
 import { FaStar, FaDownload, FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
+import AppNotFound from '../AppNotFound/AppNotFound';
 const AllApp = () => {
   const [appsData, setAppsData] = useState([]);
   const [filteredApps, setFilteredApps] = useState([]);
@@ -85,6 +85,10 @@ const AllApp = () => {
     );
   }
 
+  if (filteredApps.length === 0 && !loading) {
+    return <AppNotFound />;
+  }
+
   return (
     <div className="all-apps-container">
 
@@ -121,11 +125,6 @@ const AllApp = () => {
         ))}
       </div>
 
-      {filteredApps.length === 0 && (
-        <div className="no-results">
-          <p>No apps found matching your search.</p>
-        </div>
-      )}
       <div className="striped-background"></div>
     </div>
   );

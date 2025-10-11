@@ -6,14 +6,11 @@ import Installation from "../Pages/Installation/Installation";
 import PageDetails from "../Pages/PageDetails/PageDetails";
 import Page404 from "../Pages/ErrorPAges/Page404";
 
-
-
-
 export const router = createBrowserRouter([
   {
     path: "/",
     Component:Roots,
-    errorElement: <Page404></Page404>, 
+   errorElement: <Page404></Page404>, 
 
     children:[
       {
