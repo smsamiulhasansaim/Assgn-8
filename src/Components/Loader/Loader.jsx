@@ -9,6 +9,7 @@ const Loader = () => {
         alt="Loading" 
         className="loading-image"
       />
+      <p style={{marginTop: '10px', color: '#5d3fd3'}}>Loading...</p>
     </div>
   );
 };
