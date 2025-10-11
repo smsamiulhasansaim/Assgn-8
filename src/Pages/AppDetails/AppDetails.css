@@ -198,6 +198,12 @@
   font-weight: bold;
 }
 
+.main-app-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
 @media (max-width: 1200px) {
   .page-details-wrapper {
     padding: 15px;

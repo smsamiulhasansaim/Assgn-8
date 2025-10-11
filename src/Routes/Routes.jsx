@@ -1,3 +1,4 @@
+// router.jsx
 import { createBrowserRouter } from "react-router";
 import { lazy } from "react";
 import Roots from "../Layouts/Roots";
@@ -7,7 +8,7 @@ import Page404 from "../Pages/ErrorPAges/Page404";
 const Home = lazy(() => import("../Pages/Home/Home"));
 const AllApp = lazy(() => import("../Pages/AllApp/AllApp"));
 const Installation = lazy(() => import("../Pages/Installation/Installation"));
-const PageDetails = lazy(() => import("../Pages/PageDetails/PageDetails"));
+const AppDetails = lazy(() => import("../Pages/AppDetails/AppDetails"));
 
 export const router = createBrowserRouter([
   {
@@ -29,8 +30,8 @@ export const router = createBrowserRouter([
         Component: Installation
       },
       {
-        path: '/PageDetails',
-        Component: PageDetails
+        path: '/app-details/:id',
+        Component: AppDetails
       },
     ]
   },
