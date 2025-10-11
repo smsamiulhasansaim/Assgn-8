@@ -69,7 +69,6 @@ const AppDetails = () => {
     );
   }
 
-  // Prepare ratings data for chart
   const ratingsData = appData.ratings ? appData.ratings.map(rating => ({
     name: rating.name,
     count: rating.count
@@ -164,7 +163,7 @@ const AppDetails = () => {
                 <Tooltip />
                 <Bar 
                   dataKey="count" 
-                  fill="#8a2be2" 
+                  fill="#FF8811" 
                   maxBarSize={25}
                 />
               </BarChart>
