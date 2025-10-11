@@ -5,7 +5,6 @@ import AllApp from "../Pages/AllApp/AllApp";
 import Installation from "../Pages/Installation/Installation";
 import PageDetails from "../Pages/PageDetails/PageDetails";
 import Page404 from "../Pages/ErrorPAges/Page404";
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -29,7 +28,7 @@ export const router = createBrowserRouter([
       {
       path:'/PageDetails',
       Component: PageDetails
-      }
+      },
     ]
   },
 ]);
