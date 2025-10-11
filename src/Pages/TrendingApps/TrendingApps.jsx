@@ -35,7 +35,7 @@ const TrendingApps = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/src/Data.json');
+                const response = await fetch('/Public/Data.json');
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
