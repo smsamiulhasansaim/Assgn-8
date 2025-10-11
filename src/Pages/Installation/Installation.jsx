@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import './Installation.css';
-import { CloudDownload, Star } from 'lucide-react';
+import { CloudDownload, Star, ChevronDown } from 'lucide-react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -42,6 +41,7 @@ const AppItem = ({ app, onUninstall }) => (
 
 const Installation = () => {
   const [installedApps, setInstalledApps] = useState([]);
+  const [sortBy, setSortBy] = useState('');
 
   useEffect(() => {
     const apps = JSON.parse(localStorage.getItem('installedApps') || '[]');
@@ -55,12 +55,26 @@ const Installation = () => {
     toast.info('App uninstalled successfully!');
   };
 
-  const handleSortBySize = () => {
-    const sortedApps = [...installedApps].sort((a, b) => {
-      const sizeA = parseFloat(a.size);
-      const sizeB = parseFloat(b.size);
-      return sizeB - sizeA;
-    });
+  const handleSortChange = (e) => {
+    const selectedSort = e.target.value;
+    setSortBy(selectedSort);
+    
+    const sortedApps = [...installedApps];
+    
+    switch(selectedSort) {
+      case 'size-high-low':
+        sortedApps.sort((a, b) => parseFloat(b.size) - parseFloat(a.size));
+        break;
+      case 'downloads-high-low':
+        sortedApps.sort((a, b) => parseFloat(b.downloads) - parseFloat(a.downloads));
+        break;
+      case 'downloads-low-high':
+        sortedApps.sort((a, b) => parseFloat(a.downloads) - parseFloat(b.downloads));
+        break;
+      default:
+        break;
+    }
+    
     setInstalledApps(sortedApps);
   };
 
@@ -84,9 +98,17 @@ const Installation = () => {
         <div className="app-list-wrapper">
           <div className="app-list-header">
             <span className="apps-found">{installedApps.length} App{installedApps.length !== 1 ? 's' : ''} Found</span>
-            <div className="sort-by" onClick={handleSortBySize}>
-              Sort By Size
-              <span className="sort-arrow">▼</span>
+            <div className="sort-controls">
+              <select 
+                className="sort-dropdown" 
+                value={sortBy} 
+                onChange={handleSortChange}
+              >
+                <option value="">Sort By</option>
+                <option value="size-high-low">Size (High to Low)</option>
+                <option value="downloads-high-low">Downloads (High to Low)</option>
+                <option value="downloads-low-high">Downloads (Low to High)</option>
+              </select>
             </div>
           </div>
           <div className="app-list">

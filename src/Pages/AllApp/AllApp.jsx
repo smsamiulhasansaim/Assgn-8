@@ -124,8 +124,6 @@ const AllApp = () => {
           />
         ))}
       </div>
-
-      <div className="striped-background"></div>
     </div>
   );
 };
