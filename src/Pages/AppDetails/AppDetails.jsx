@@ -1,6 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './AppDetails.css'
+import './AppDetails.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   BarChart,
   Bar,
@@ -15,6 +18,7 @@ const AppDetails = () => {
   const { id } = useParams();
   const [appData, setAppData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
     const fetchAppData = async () => {
@@ -26,6 +30,10 @@ const AppDetails = () => {
         const data = await response.json();
         const app = data.find(item => item.id === parseInt(id));
         setAppData(app);
+        
+        const installedApps = JSON.parse(localStorage.getItem('installedApps') || '[]');
+        const isAppInstalled = installedApps.some(installedApp => installedApp.id === parseInt(id));
+        setIsInstalled(isAppInstalled);
       } catch (error) {
         console.error('Error fetching app data:', error);
       } finally {
@@ -35,6 +43,15 @@ const AppDetails = () => {
 
     fetchAppData();
   }, [id]);
+
+
+  useEffect(() => {
+    if (appData) {
+      const installedApps = JSON.parse(localStorage.getItem('installedApps') || '[]');
+      const isAppInstalled = installedApps.some(installedApp => installedApp.id === appData.id);
+      setIsInstalled(isAppInstalled);
+    }
+  }, [appData]);
 
   const formatDownloads = (downloads) => {
     if (downloads >= 1000000000) return (downloads / 1000000000).toFixed(1) + 'B';
@@ -48,6 +65,37 @@ const AppDetails = () => {
     if (reviews >= 1000) return (reviews / 1000).toFixed(1) + 'K';
     return reviews;
   };
+
+  const handleInstall = () => {
+    if (!appData) return;
+
+    const installedApps = JSON.parse(localStorage.getItem('installedApps') || '[]');
+    
+
+    if (installedApps.some(app => app.id === appData.id)) {
+      toast.info('This app is already installed!');
+      setIsInstalled(true);
+      return;
+    }
+
+
+    const appToInstall = {
+      id: appData.id,
+      name: appData.title,
+      downloads: formatDownloads(appData.downloads),
+      rating: appData.ratingAvg,
+      size: appData.size + ' MB',
+      image: appData.image,
+      companyName: appData.companyName
+    };
+
+    installedApps.push(appToInstall);
+    localStorage.setItem('installedApps', JSON.stringify(installedApps));
+    setIsInstalled(true);
+    
+    toast.success(`${appData.title} installed successfully!`);
+  };
+
 
   if (loading) {
     return (
@@ -111,17 +159,21 @@ const AppDetails = () => {
               <p className="detail-value">{formatReviews(appData.reviews)}</p>
               <p className="detail-label">Total Reviews</p>
             </div>
-            <div className="detail-item">
-              <div className="detail-icon-placeholder">
-                <img src="/src/assets/icon-size.png" alt="Size" />
-              </div>
-              <p className="detail-value">{appData.size} MB</p>
-              <p className="detail-label">Size</p>
-            </div>
           </div>
-          <button className="install-button">
-            Install Now ({appData.size} MB)
-          </button>
+          
+          {isInstalled ? (
+            <button 
+              className="install-button" 
+              style={{backgroundColor: '#6c757d', cursor: 'not-allowed'}}
+              disabled
+            >
+              Installed
+            </button>
+          ) : (
+            <button className="install-button" onClick={handleInstall}>
+              Install Now ({appData.size} MB)
+            </button>
+          )}
         </div>
       </div>
       <div className="line"></div>
