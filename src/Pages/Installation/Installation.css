@@ -1,0 +1,217 @@
+.installation-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.installation-header {
+    text-align: center;
+    padding: 20px 0 40px;
+    border: 2px dashed #ADD8E6;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.installation-header h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.installation-header p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.app-list-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.app-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f7f7f7;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.sort-by {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #fff;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.sort-by:hover {
+    background-color: #f0f0f0;
+}
+
+.sort-arrow {
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.app-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.app-item:hover {
+    background-color: #f9f9f9;
+}
+
+.app-item:last-child {
+    border-bottom: none;
+}
+
+.app-icon-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.app-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.app-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.app-stats {
+    font-size: 0.85em;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.app-rating {
+    display: flex;
+    align-items: center;
+    color: #FFC107;
+}
+
+.app-rating svg {
+    margin-right: 3px;
+}
+
+.app-downloads, .app-size {
+    color: #999;
+}
+
+.uninstall-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+}
+
+.uninstall-button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .installation-container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+    
+    .installation-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .app-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    
+    .app-icon-placeholder {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .app-details {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .app-stats {
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .uninstall-button {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .installation-container {
+        margin: 10px auto;
+        padding: 10px;
+    }
+    
+    .installation-header {
+        padding: 15px 0 25px;
+    }
+    
+    .installation-header h1 {
+        font-size: 1.5em;
+    }
+    
+    .app-list-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .app-stats {
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-start;
+    }
+    
+    .app-name {
+        font-size: 1em;
+    }
+}
